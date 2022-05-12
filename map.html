@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cesium.js Example</title>
+    <script src="https://cesium.com/downloads/cesiumjs/releases/1.71/Build/Cesium/Cesium.js"></script>
+    <link href="https://cesium.com/downloads/cesiumjs/releases/1.71/Build/Cesium/Widgets/widgets.css" rel="stylesheet"/>
+</head>
+<body>
+<div
+        id="cesiumContainer"
+        style="width: 1024px; height: 700px; margin: 50px;"
+></div>
+
+<div style="margin: 50px;">
+    <iframe
+            title="Melbourne Australia Sensor Tutorial"
+            width="1024"
+            height="576"
+            src="https://cesium.com/ion/stories/viewer/?id=d008fe2e-f7cc-4860-a2a0-9bf0eac4106f"
+            frameborder="0"
+            allow="fullscreen"
+            allowfullscreen="true"
+            mozallowfullscreen="true"
+            webkitallowfullscreen="true"
+    ></iframe>
+</div>
+
+<div style="margin: 50px;">
+    <iframe
+            title="New York City Buildings"
+            width="1024"
+            height="576"
+            src="https://cesium.com/ion/stories/viewer/?id=0667eb6e-4989-468f-b8f8-738f9b3db169"
+            frameborder="0"
+            allow="fullscreen"
+            allowfullscreen="true"
+            mozallowfullscreen="true"
+            webkitallowfullscreen="true"
+    ></iframe>
+</div>
+
+<div style="margin: 50px;">
+    <iframe
+            title="UntitledVisualizing time dynamic data in Cesium"
+            width="1024"
+            height="576"
+            src="https://cesium.com/ion/stories/viewer/?id=1e6722da-8941-4e53-aed0-c77d8d53d0d9"
+            frameborder="0"
+            allow="fullscreen"
+            allowfullscreen="true"
+            mozallowfullscreen="true"
+            webkitallowfullscreen="true"
+    ></iframe>
+</div>
+<script>
+    Cesium.Ion.defaultAccessToken = "JINSEONG-HWANG-CESIUM-ION-ACCESS-TOKEN";
+    const viewer = new Cesium.Viewer("cesiumContainer", {
+        terrainProvider: Cesium.createWorldTerrain(),
+    });
+    const tileset = viewer.scene.primitives.add(
+        new Cesium.Cesium3DTileset({
+            url: Cesium.IonResource.fromAssetId(your_asset_id),
+        })
+    );
+    viewer.zoomTo(tileset);
+</script>
+</body>
+</html>
+
